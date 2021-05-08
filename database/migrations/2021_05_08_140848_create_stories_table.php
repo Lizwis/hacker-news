@@ -15,6 +15,12 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('story_id');
+            $table->text('title');
+            $table->string('posted_by');
+            $table->bigInteger('score');
+            $table->bigInteger('time');
+            $table->text('url');
             $table->timestamps();
         });
     }
