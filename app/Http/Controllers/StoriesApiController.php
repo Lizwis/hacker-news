@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use App\Story;
 use App\Comment;
 
-class StoriesController extends Controller
+class StoriesApiController extends Controller
 {
     public function index()
     {

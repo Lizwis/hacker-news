@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'StoriesController@index');
+Route::get('/', 'storyController@index');
+Route::get('/create/stories', 'StoriesApiController@index');
