@@ -1,0 +1,28 @@
+body {
+    background-color: #ffff !important;
+}
+
+.nav-bg {
+    background-color: rgb(255, 102, 0);
+}
+
+.container-bg {
+    background-color: rgb(246, 246, 239);
+}
+a {
+    color: #000000 !important;
+}
+.logo {
+    border: 1px solid #ffffff;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    color: #ffffff;
+}
+.post-details {
+    color: #828282 !important;
+    font-size: 9pt;
+}
+.post-title {
+    font-size: 12pt;
+}

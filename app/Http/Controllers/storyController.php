@@ -9,6 +9,7 @@ class storyController extends Controller
 {
     public function index()
     {
-        return Story::with('comments')->get();
+        $stories = Story::with('comments')->get();
+        return view('index', compact('stories'));
     }
 }
