@@ -9,7 +9,7 @@
         </div>
         <div class="col-12 post-details pb-1">
             {{ $story->score }} points by {{ $story->posted_by }} {{ 4 }} hours ago | hide |
-            <a href="/" class="post-details"> {{ count($story->comments) }} comments</a>
+            <a href="/comments/{{ $story->story_id }}" class="post-details"> {{ count($story->comments) }} comments</a>
         </div>
     @endforeach
 @endsection

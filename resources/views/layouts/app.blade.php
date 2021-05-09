@@ -13,7 +13,7 @@
 <body>
     <div class="container px-0 container-bg">
         <nav class="navbar navbar-expand-lg my-0 py-2 nav-bg px-0">
-            <a class="nav-link py-0 font-weight-bold" href="#">
+            <a class="nav-link py-0 font-weight-bold" href="/">
                 <span class="logo px-1">Y</span> Hacker News
             </a>
             <ul class="navbar-nav mr-auto">
