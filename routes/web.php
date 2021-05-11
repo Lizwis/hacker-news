@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'storyController@index');
 Route::get('/comments/{story_id}', 'storyController@get_comments');
 
-Route::get('/create/stories', 'StoriesApiController@index');
+Route::get('/create/stories/{limit}', 'StoriesApiController@index');

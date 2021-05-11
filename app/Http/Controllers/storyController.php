@@ -8,6 +8,7 @@ use App\Story;
 
 class storyController extends Controller
 {
+
     public function index()
     {
         $stories = Story::with('comments')->get();

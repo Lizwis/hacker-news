@@ -9,11 +9,17 @@ use App\Comment;
 
 class StoriesApiController extends Controller
 {
-    public function index()
+    public function index($limit)
     {
+
         $story_ids = Http::get('https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty');
 
+        $count = 0;
         foreach ($story_ids->json() as $story_id) {
+            $count++;
+            if ($count > $limit) {
+                break;
+            }
             $story = Http::get('https://hacker-news.firebaseio.com/v0/item/' . $story_id . '.json?print=pretty');
             $this->insert_story($story);
 
@@ -27,10 +33,10 @@ class StoriesApiController extends Controller
     {
         Story::create([
             'story_id' => $story['id'],
-            'title' => $story['title'],
-            'posted_by' => $story['by'],
-            'score' => $story['score'],
-            'time' => $story['time'],
+            'title' => $story['title'] ?? '',
+            'posted_by' => $story['by'] ?? '',
+            'score' => $story['score'] ?? '',
+            'time' => $story['time'] ?? '',
             'url' => $story['url'] ?? ''
         ]);
     }
@@ -40,10 +46,10 @@ class StoriesApiController extends Controller
         foreach ($kids as $kid) {
             $comment = Http::get('https://hacker-news.firebaseio.com/v0/item/' . $kid . '.json?print=pretty');
             Comment::create([
-                'parrent_id' => $comment['parent'],
-                'posted_by' => $comment['by'],
-                'comment' => $comment['text'],
-                'time' => $comment['time'],
+                'parent_id' => $comment['parent'],
+                'posted_by' => $comment['by'] ?? '',
+                'comment' => $comment['text'] ?? '',
+                'time' => $comment['time'] ?? '',
             ]);
         }
     }
