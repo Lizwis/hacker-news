@@ -2,7 +2,8 @@ name: phpUnit tests
 
 on: push
 
-Jobs:
+jobs:
+  ci-pipeline:
     runs-on: ubuntu-latest
 
     steps:
