@@ -27,6 +27,8 @@ class StoriesApiController extends Controller
                 $this->insert_story_comments($story['kids']);
             }
         }
+
+        return redirect('/');
     }
 
     private function insert_story($story)
